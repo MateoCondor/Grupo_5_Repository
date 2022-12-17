@@ -1,0 +1,3 @@
+﻿  MergeSort.cpp
+G:\Programas\Unidad 2\MergeSort\MergeSort.cpp(11,25): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  MergeSort.vcxproj -> G:\Programas\Unidad 2\MergeSort\x64\Debug\MergeSort.exe
