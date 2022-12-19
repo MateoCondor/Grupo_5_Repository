@@ -1,0 +1,10 @@
+﻿  Animacion.cpp
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\Animacion.cpp(37,11): warning C4309: 'inicializando': truncamiento de valor constante
+  MergeSort.cpp
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\Arreglo.h(84,39): warning C4244: 'argumento': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\Arreglo.h(78,29): message : al compilar la función del miembro clase plantilla "void Arreglo<int>::imprimir(void)"
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\MergeSort.cpp(47,21): message : Vea la referencia a la creación de una instancia de la función plantilla "void Arreglo<int>::imprimir(void)" que se está compilando
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\MergeSort.cpp(26,18): message : Vea la referencia a la creación de una instancia de clase plantilla "Arreglo<int>" que se está compilando
+  ValidarDatos.cpp
+  Generando código...
+  MergeSort.vcxproj -> C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\MergeSortDeber\MergeSort\x64\Debug\MergeSort.exe
