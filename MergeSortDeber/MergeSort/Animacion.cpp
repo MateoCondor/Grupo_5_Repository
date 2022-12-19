@@ -2,7 +2,6 @@
 UNIVERSIDAD DE LAS FUERZAS ARMADAS
 		 ~~ ESPE ~~
 	 INGENIERIA EN SOFTWARE
-
 		   GRUPO #5
 MIEMBROS:
 	- Luis Burbano
@@ -12,14 +11,12 @@ MIEMBROS:
 	- Steven Pozo
 	- Jairo Quilumbaquin
 	- Edwin Cantuña
-
 Fecha de creacion:
 	- 12 / 12 / 2022
-
 Fecha de modificacion:
 	- 18 / 12 / 2022
-
 */
+
 
 #include "Animacion.h"
 #include <Windows.h>
@@ -40,8 +37,8 @@ std::string Animacion::generarFilas(int dato) {
 	char a = 223;
 	std::string fil = "";
 
-	if (dato >= 75) {
-		limite = 75;
+	if (dato >= 100) {
+		limite = 100;
 	}
 	else {
 		limite = dato;

@@ -129,11 +129,12 @@
   <ItemGroup>
     <ClCompile Include="Animacion.cpp" />
     <ClCompile Include="MergeSort.cpp" />
+    <ClCompile Include="ValidarDatos.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animacion.h" />
-    <ClInclude Include="arreglo.h" />
-    <ClInclude Include="val.h" />
+    <ClInclude Include="Arreglo.h" />
+    <ClInclude Include="ValidarDatos.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
