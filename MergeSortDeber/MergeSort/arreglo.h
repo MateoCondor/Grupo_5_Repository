@@ -1,3 +1,26 @@
+/*
+UNIVERSIDAD DE LAS FUERZAS ARMADAS
+         ~~ ESPE ~~
+     INGENIERIA EN SOFTWARE
+
+           GRUPO #5
+MIEMBROS:
+    - Luis Burbano
+    - Mateo Condor
+    - Camila Morales
+    - Ricardo Rivadeneira
+    - Steven Pozo
+    - Jairo Quilumbaquin
+    - Edwin Cantuña
+
+Fecha de creacion:
+    - 12 / 12 / 2022
+
+Fecha de modificacion:
+    - 18 / 12 / 2022
+
+*/
+
 #pragma once
 #include "Animacion.h"
 #include <Windows.h>
@@ -54,12 +77,14 @@ T Arreglo<T>::obtener(int indice) {
     return valor;
 }
 
+
+//Funcion para imprimir con barras el resultado 
 template <typename T>
 void Arreglo<T>::imprimir() {
     int x = 5;
     int y = 5;
     for (int i = 0; i < _tamano; i++) {
-        animacion.gotoxi(x, y++); std::cout << *(_datos + i) << "\t \t" << animacion.generarFilas(*(_datos + i));
+        animacion.gotoxi(x, y++); std::cout << *(_datos + i) << "   \t   " << animacion.generarFilas(*(_datos + i));
         //animacion.gotoxi(x, y++); std::cout << *(_datos + i); animacion.gotoxi(x + 5, y++); std::cout << animacion.generarFilas(*(_datos + i));
     }
     Sleep(600);
@@ -102,14 +127,23 @@ void Arreglo<T>::imprimirArreglo() {
     std::cout << "]" << std::endl;
 }
 
+//===================================================
+//      Inicio de las funciones necesarias para      
+//      el algoritmo de ordenamiento MergeSort  
 
+
+
+// Función para fusionar las dos partes del arreglo
 template <typename T>
 void Arreglo<T>::merge(int inicio, int medio, int fin) {
     auto const subArregloUno = medio - inicio + 1;
     auto const subArregloDos = fin - medio;
 
-    auto* arregloInicial = new int[subArregloUno], * arregloFinal = new int[subArregloDos];
+    //arreglos temporales 
+    auto* arregloInicial = new int[subArregloUno];
+    auto* arregloFinal = new int[subArregloDos];
 
+    // Copiar datos en los arreglos temporales
     for (auto i = 0; i < subArregloUno; i++) {
         *(arregloInicial + i) = *(_datos + inicio + i);
     }
@@ -118,6 +152,7 @@ void Arreglo<T>::merge(int inicio, int medio, int fin) {
         *(arregloFinal + j) = *(_datos + medio + 1 + j);
     }
 
+    // Fusionar los arreglos temporales de nuevo en un arreglo.
     auto indiceArregloUno = 0, indiceArregloDos = 0;
     int indiceArregloUnido = inicio;
 
@@ -134,12 +169,14 @@ void Arreglo<T>::merge(int inicio, int medio, int fin) {
         indiceArregloUnido++;
     }
 
+    // Copiar los elementos restantes del arreglo temporal uno, si hay alguno.
     while (indiceArregloUno < subArregloUno) {
         *(_datos + indiceArregloUnido) = *(arregloInicial + indiceArregloUno);
         indiceArregloUno++;
         indiceArregloUnido++;
     }
 
+    // Copiar los elementos restantes del arreglo temporal dos, si hay alguno.
     while (indiceArregloDos < subArregloDos) {
         *(_datos + indiceArregloUnido) = *(arregloFinal + indiceArregloDos);
         indiceArregloDos++;
@@ -147,6 +184,8 @@ void Arreglo<T>::merge(int inicio, int medio, int fin) {
     }
 }
 
+
+// Función para dividir el arreglo en dos partes
 template <typename T>
 void Arreglo<T>::merge_sort(int inferior, int superior) {
     if (inferior >= superior)
@@ -159,3 +198,9 @@ void Arreglo<T>::merge_sort(int inferior, int superior) {
     imprimir();
     borrar();
 }
+
+
+
+//      Fin de las funciones necesarias para      
+//      el algoritmo de ordenamiento MergeSort  
+//===================================================
