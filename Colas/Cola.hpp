@@ -25,6 +25,7 @@ class Cola{
     private:
         Nodo<T> *inicio=nullptr;
         Nodo<T> *fin=nullptr;
+        int size=0;
     public:
         Cola(){
             this->inicio = NULL;
@@ -43,6 +44,10 @@ class Cola{
             return this->fin;
         }
 
+        int getSize(){
+            return this->size;
+        }
+
         void insertar(T dato){
             Nodo<T> *nuevo = new Nodo<T>(dato);
             if(this->inicio== NULL){
@@ -54,6 +59,7 @@ class Cola{
                 nuevo->setSiguiente(NULL);
                 this->fin = nuevo;
             }
+            this->size++;
         }
 
         T eliminar(){
@@ -61,6 +67,7 @@ class Cola{
             Nodo<T> *aux = this->inicio;
             this->inicio = this->inicio->getSiguiente();
             delete aux;
+            this->size--;
             return dato;
         }
 

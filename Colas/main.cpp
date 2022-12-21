@@ -20,14 +20,25 @@
 
 int main(int argc, char const *argv[])
 {
+    int cantidad=0;
     Cola<Cliente> *cola = new Cola<Cliente>();
     Generador *generador = new Generador();
 
+    std::cout<<"Ingrese la cantiadd de personas que desea generar:"<<endl;
+    std::cin>>cantidad;
 
-    generador->generarPrimerCliente(*cola);
-    generador->generarCliente(*cola);
-
-    cout<<"Tiempo de llegada: "<<cola->getInicio()->getDato().getTiempoLlegada()<<endl;
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (i==0)
+        {
+            generador->generarPrimerCliente(*cola);            
+        }else{
+            generador->generarCliente(*cola);
+        }
+        
+    }
+    
+    generador->imprimirCola(*cola);
     return 0;
 }
 

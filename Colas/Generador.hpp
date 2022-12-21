@@ -57,12 +57,13 @@ public:
         int tiempoServicio = 0;
         int tiempoSalida = 0;
 
-        tiempoEntreLlegada = fun.tiempoEntreLLegada(0, 0, 1);
+        
         tiempoLlegada = fun.tiempoDeLlegada(0);
+        tiempoEntreLlegada = fun.tiempoEntreLLegada(tiempoLlegada, 0, 1);
         tiempoEspera = fun.tiempoEspera(0, 0);
         tiempoSinAtender = fun.tiempoNoTrabajaCajero(0, 0, 1);
         tiempoServicio = fun.tiempoServicio();
-        tiempoSalida = fun.tiempoSalida(0, 0, tiempoServicio);
+        tiempoSalida = fun.tiempoSalida(tiempoLlegada, 0, tiempoServicio);
 
         cliente.setTiempoEntreLlegada(tiempoEntreLlegada);
         cliente.setTiempoLlegada(tiempoLlegada);
@@ -72,5 +73,24 @@ public:
         cliente.setTiempoSalida(tiempoSalida);
 
         cola.insertar(cliente);
+    }
+
+    void imprimirCola(Cola<Cliente> &cola)
+    {
+        int size = 0;
+
+        Nodo<Cliente> *aux = cola.getInicio();
+        
+
+        std::cout << "Persona\tTiempo de llegada\tTiempo de espera\tTiempo sin atender\tTiempo de servicio\tTiempo de salida\tTiempo entre llegada\t" << endl;
+        while (aux != NULL)
+        {
+
+            std::cout<<size+1<<"\t" << aux->getDato().getTiempoLlegada() << "\t\t\t" << aux->getDato().getTiempoEspera() << "\t\t\t" << aux->getDato().getTiempoSinAtender() << "\t\t\t" << aux->getDato().getTiempoServicio() << "\t\t\t" << aux->getDato().getTiempoSalida() << "\t\t\t" <<aux->getDato().getTiempoEntreLlegada() << "\t\t\t" << endl;
+            std::cout << std::endl;
+            aux = aux->getSiguiente();
+            size++;
+        }
+
     }
 };

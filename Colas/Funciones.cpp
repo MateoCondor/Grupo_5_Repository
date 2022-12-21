@@ -7,9 +7,9 @@
 
 
 int Funciones::generarNumeroAleatorio (int min, int max) {
-    int num, c;
-    srand(time(NULL));
-    num = rand() % ((max+1) - min);
+    int num;
+
+    num = min + rand() % max;
     return num;
 }
 
