@@ -78,7 +78,10 @@ public:
     void imprimirCola(Cola<Cliente> &cola)
     {
         int size = 0;
+        int contador=0;
+        int promedioEspera=0;
 
+        size = cola.getSize();
         Nodo<Cliente> *aux = cola.getInicio();
         
 
@@ -88,9 +91,11 @@ public:
 
             std::cout<<size+1<<"\t" << aux->getDato().getTiempoLlegada() << "\t\t\t" << aux->getDato().getTiempoEspera() << "\t\t\t" << aux->getDato().getTiempoSinAtender() << "\t\t\t" << aux->getDato().getTiempoServicio() << "\t\t\t" << aux->getDato().getTiempoSalida() << "\t\t\t" <<aux->getDato().getTiempoEntreLlegada() << "\t\t\t" << endl;
             std::cout << std::endl;
+            promedioEspera+=aux->getDato().getTiempoEspera();
             aux = aux->getSiguiente();
-            size++;
+            contador++;
         }
-
+        promedioEspera=promedioEspera/size;
+        cout<<"Promedio de espera: "<<promedioEspera<<endl;
     }
 };
