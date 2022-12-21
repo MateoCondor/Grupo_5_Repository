@@ -1,0 +1,2 @@
+G:\Programas\Unidad 2\AlgoritmosBusqueda\ListaSimpleTemplates\x64\Debug\ListaSimpleTemplates.exe
+G:\Programas\TrabajosGrupo5\Grupo_5_Repository\AlgoritmosBusqueda\CODIGO\ListaSimpleTemplates\x64\Debug\ListaSimpleTemplates.exe

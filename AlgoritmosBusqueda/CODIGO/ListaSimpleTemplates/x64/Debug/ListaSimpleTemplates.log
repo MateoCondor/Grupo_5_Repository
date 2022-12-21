@@ -1,0 +1,3 @@
+﻿  ListaSimpleTemplates.cpp
+G:\Programas\TrabajosGrupo5\Grupo_5_Repository\AlgoritmosBusqueda\CODIGO\ListaSimpleTemplates\ListaSimple.h(164): warning C4715: 'ListaSimple<int>::mostrar': no todas las rutas de acceso de control devuelven un valor
+  ListaSimpleTemplates.vcxproj -> G:\Programas\TrabajosGrupo5\Grupo_5_Repository\AlgoritmosBusqueda\CODIGO\ListaSimpleTemplates\x64\Debug\ListaSimpleTemplates.exe

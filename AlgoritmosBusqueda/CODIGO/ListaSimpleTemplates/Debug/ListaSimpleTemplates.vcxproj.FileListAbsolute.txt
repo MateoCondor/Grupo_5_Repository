@@ -1,0 +1,2 @@
+C:\Users\condo\Desktop\AlgoritmosBusqueda\ListaSimpleTemplates\Debug\ListaSimpleTemplates.exe
+C:\Users\condo\Documents\Universidad\ESTRUCTURA DE DATOS\Grupo_5_Repository\AlgoritmosBusqueda\CODIGO\ListaSimpleTemplates\Debug\ListaSimpleTemplates.exe
