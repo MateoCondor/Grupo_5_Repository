@@ -20,7 +20,7 @@
 #define __ObjectOrientedModel_1_Persona_h
 
 #include <iostream>
-#include "Fecha.h"
+#include "Fecha.cpp"
 
 class Persona
 {

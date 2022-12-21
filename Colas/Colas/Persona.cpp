@@ -56,10 +56,23 @@ void Persona::setApellido(std::string newApellido)
    apellido = newApellido;
 }
 
+Fecha Persona::getFecha(void)
+{
+   return fecha;
+}
+
+void Persona::setFecha(Fecha newFecha)
+{
+   fecha = newFecha;
+}
+
 
 Persona::Persona()
 {
    
+   this->fecha.setDia(0);
+   this->fecha.setMes(0);
+   this->fecha.setYear(0);
 }
 
 

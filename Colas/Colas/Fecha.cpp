@@ -59,7 +59,9 @@ void Fecha::setYear(int newYear)
 
 Fecha::Fecha()
 {
-   persona = NULL;
+   this->dia = 0;
+   this->mes = 0;
+   this->year = 0;
 }
 
 Fecha::~Fecha()

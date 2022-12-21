@@ -33,7 +33,6 @@ public:
    Fecha();
    ~Fecha();
 
-   Persona** persona;
 
 protected:
 private:
