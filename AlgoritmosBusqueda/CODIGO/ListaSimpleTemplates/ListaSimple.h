@@ -16,6 +16,10 @@ private:
 
 public:
 
+    int obtenerTamanio() {
+        return tam;
+    }
+
     void insertarPorInicio(T dato) {
         Nodo<T>* nuevo = new Nodo<T>(dato);
         if (inicio == NULL) {
@@ -242,27 +246,33 @@ public:
         int inicio = 0; 
         int final = tam - 1;
         int mitad;
-       
+
+        bool bandera = false;
+        
+        mitad = (inicio + final) / 2;
+
         while (inicio <= final) {
             
-            mitad = (inicio + final) / 2;
-
             if (obtenerNodo(mitad)->getDato() == dato) {
-                cout << "Dato Encontrado: " << dato << endl;
+                bandera = true;
                 break;
             }
             if (obtenerNodo(mitad)->getDato() > dato) {
-                final = mitad;
-                mitad = (inicio + final) / 2;
+                final = mitad - 1;
             }
             if (obtenerNodo(mitad)->getDato() < dato) { 
-                inicio = mitad;
-                mitad = (inicio + final) / 2;
+                inicio = mitad + 1;
             }
-			if (mitad == 1) {
-				cout << "Dato no encontrado" << endl;
-				break;
-			}
+            mitad = (inicio + final) / 2;
+        }
+
+        if (bandera == true) {
+            cout << endl;
+            cout << "Dato Encontrado: " << dato << " en la posicion " << mitad << endl;
+        }
+        else {
+            cout << endl;
+            cout << "Dato No Encontrado: " << endl;
         }
     }
 
@@ -270,12 +280,14 @@ public:
 		bool encontrado = false;
         for (int i = 0; i < tam; i++) {
             if (obtenerNodo(i)->getDato() == dato) {
+                cout << endl;
                 cout << "Dato Encontrado: " << dato << endl;
 				encontrado = true;
             } 
         }
 		if (encontrado == false) {
-			cout << "Dato no encontrado" << endl;
+            cout << endl;
+			cout << "Dato No encontrado" << endl;
 		}
     }
 
