@@ -2,12 +2,17 @@
 		INGENIERA DE SOFTWARE
                 
 	AUTORES:
-		Mateo Javier Condor Sosa 	 
-		Luis Ariel Burbano Pacheco       
+			-Luis Burbano
+			-Mateo Condor
+			-Camila Morales
+			-Ricardo Rivadeneira
+			-Steven Pozo
+			-Jairo Quilumbaquin
+			-Edwin Cantuña      
 	FECHA DE CREACION:
-		16/11/2022         	
+		19/12/2022         	
 	FECHA DE MODIFICACION:
-		21/11/2022   
+		03/12/2023   
 */
 
 #include <iostream>
