@@ -319,6 +319,20 @@ public:
         cout << "La lista tiene " << tam << " elementos " << endl;
     }
 
+   
+
+    void modificarPosicion(Nodo<T>* posicion, Persona nuevo) {
+        Nodo<T>* actual = inicio;
+        while (actual) {
+            if (actual == posicion) {
+                actual->setDato(nuevo);
+                break;
+            }
+            actual = actual->getSiguiente();
+        }
+    }
+    
+
     Nodo<Persona> *obtenerNodo(int indice)
     {
         if (indice < 0 || indice >= tam)
@@ -355,12 +369,12 @@ public:
 
         for (int i = 0; i < elementosIzq; i++)
         {
-            izquierda.insertarPorFin(atoi(obtenerNodo(inicio + i)->getDato().getCedula()));
+            izquierda.insertarPorFin(obtenerNodo(inicio + i)->getDato());
         }
 
         for (int j = 0; j < elementosDer; j++)
         {
-            derecha.insertarPorFin(atoi(obtenerNodo(mitad + 1 + j)->getDato().getCedula()));
+            derecha.insertarPorFin(obtenerNodo(mitad + 1 + j)->getDato());
         }
 
         i = 0;
@@ -369,7 +383,7 @@ public:
 
         while (i < elementosIzq && j < elementosDer)
         {
-            if (izquierda.obtenerNodo(i)->getDato() <= derecha.obtenerNodo(j)->getDato())
+            if (izquierda.obtenerNodo(i)->getDato().getCedula() <= derecha.obtenerNodo(j)->getDato().getCedula())
             {
                 modificarPosicion(obtenerNodo(k), izquierda.obtenerNodo(i)->getDato());
                 i++;
@@ -397,6 +411,8 @@ public:
         }
     }
 
+
+
     void mergeSort(int inicio, int final)
     {
         if (inicio < final)
@@ -405,6 +421,69 @@ public:
             mergeSort(inicio, mitad);
             mergeSort(mitad + 1, final);
             merge(inicio, mitad, final);
+        }
+    }
+
+    void mergeApellido(int inicio, int mitad, int final)
+    {
+        int i, j, k;
+        int elementosIzq = mitad - inicio + 1;
+        int elementosDer = final - mitad;
+
+        ListaSimple izquierda, derecha, mezcla;
+
+        for (int i = 0; i < elementosIzq; i++)
+        {
+            izquierda.insertarPorFin(obtenerNodo(inicio + i)->getDato());
+        }
+
+        for (int j = 0; j < elementosDer; j++)
+        {
+            derecha.insertarPorFin(obtenerNodo(mitad + 1 + j)->getDato());
+        }
+
+        i = 0;
+        j = 0;
+        k = inicio;
+
+        while (i < elementosIzq && j < elementosDer)
+        {
+            if (izquierda.obtenerNodo(i)->getDato().getApellido() <= derecha.obtenerNodo(j)->getDato().getApellido())
+            {
+                modificarPosicion(obtenerNodo(k), izquierda.obtenerNodo(i)->getDato());
+                i++;
+            }
+            else
+            {
+                modificarPosicion(obtenerNodo(k), derecha.obtenerNodo(j)->getDato());
+                j++;
+            }
+            k++;
+        }
+
+        while (j < elementosDer)
+        {
+            modificarPosicion(obtenerNodo(k), derecha.obtenerNodo(j)->getDato());
+            j++;
+            k++;
+        }
+
+        while (i < elementosIzq)
+        {
+            modificarPosicion(obtenerNodo(k), izquierda.obtenerNodo(i)->getDato());
+            i++;
+            k++;
+        }
+    }
+
+    void mergeSortApellido(int inicio, int final)
+    {
+        if (inicio < final)
+        {
+            int mitad = inicio + (final - inicio) / 2;
+            mergeSortApellido(inicio, mitad);
+            mergeSortApellido(mitad + 1, final);
+            mergeApellido(inicio, mitad, final);
         }
     }
  
